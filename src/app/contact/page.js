@@ -34,7 +34,7 @@ export default function Contact() {
             LinkedIn
           </h2>
           <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
-            Let's connect!
+            {`Let's connect!`}
           </p>
           <a
             href="https://www.linkedin.com/in/prwkhar/"

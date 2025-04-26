@@ -123,7 +123,7 @@ export default function Tictactoe() {
 
     {winner && (
       <div className="m-3 text-2xl font-semibold flex flex-col items-center gap-4">
-        {winner === "Draw" ? "It's a Draw!" : (winner === 'O' ? "You lost" : "You Won!")}
+        {winner === "Draw" ? "It's a Draw!" : (winner === "O" ? "You lost" : "You Won!")}
 
         <div className="flex gap-4">
           <button
@@ -133,7 +133,7 @@ export default function Tictactoe() {
             Restart
           </button>
 
-          {winner === 'X' && (
+          {winner === "X" && (
             <a
               href="/cv.pdf"    
               download
