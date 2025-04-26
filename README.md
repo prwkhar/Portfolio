@@ -1,3 +1,4 @@
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
@@ -6,31 +7,25 @@ First, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## About
+This is the portfolio website made using Next.js.
+This showcases my About info , project info and contact info in a modern and responsive UI format.Small game integration makes this portfolion website unique and fun to engage with.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## What was your favourite part?
+My favourite part was building the tictactoe game inside it.
+I got the idea that to make the website interesting I can build a small game or something. So for that I choose tictactoe. To download my CV u first have to defeat the bot.
 
-## Learn More
+## Hardest part
+Hardest part was to make the logic for a decent autoplay bot. I first started with random generation of move but that was very bad. Therefore I had to implement some logic to make it a decent level bot to play with.
 
-To learn more about Next.js, take a look at the following resources:
+## Tech Stack
+- Next JS 
+- Tailwind CSS
+- Deployed on Vercel
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Developed by
+Prakhar Agarwal
