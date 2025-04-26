@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import { useState } from "react";
 import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaGithub, FaPython } from "react-icons/fa";
 import { SiMongodb, SiTailwindcss, SiNextdotjs, SiSocketdotio } from "react-icons/si";
