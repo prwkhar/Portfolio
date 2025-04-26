@@ -107,7 +107,7 @@ export default function Tictactoe() {
     return (
   <div className="flex flex-col items-center justify-center bg-amber-800/20 mt-2.5 rounded-2xl">
     <h1 className="text-3xl font-bold mb-2 mt-2">Play - TicTacToe</h1>
-    <p className="text-amber-300">`Beat the bot to download the CV(Click any cell!!)`</p>
+    <p className="text-amber-300">{`Beat the bot to download the CV(Click any cell!!)`}</p>
 
     <div className="grid grid-cols-3 gap-4 p-4">
       {board.map((cell, index) => (
