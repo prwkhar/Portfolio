@@ -65,7 +65,6 @@ export default function Tictactoe() {
 
         const newBoard = [...board];
 
-        // First, try to win
         for (let index of emptyIndices) {
             newBoard[index] = "O";
             if (calculateWinner(newBoard) === "O") {
@@ -77,7 +76,6 @@ export default function Tictactoe() {
             newBoard[index] = "";
         }
 
-        // Second, try to block player from winning
         for (let index of emptyIndices) {
             newBoard[index] = "X";
             if (calculateWinner(newBoard) === "X") {
@@ -90,7 +88,6 @@ export default function Tictactoe() {
             newBoard[index] = "";
         }
 
-        // Otherwise, random move
         const randomIndex = emptyIndices[Math.floor(Math.random() * emptyIndices.length)];
         newBoard[randomIndex] = "O";
         setBoard(newBoard);
@@ -107,7 +104,7 @@ export default function Tictactoe() {
     return (
   <div className="flex flex-col items-center justify-center bg-amber-800/20 mt-2.5 rounded-2xl">
     <h1 className="text-3xl font-bold mb-2 mt-2">Play - TicTacToe</h1>
-    <p className="text-amber-300">{`Beat the bot to download the CV(Click any cell!!)`}</p>
+    <p className="text-amber-300">{`Beat the bot to download the CV (Click any cell!!)`}</p>
 
     <div className="grid grid-cols-3 gap-4 p-4">
       {board.map((cell, index) => (
