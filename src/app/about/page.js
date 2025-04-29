@@ -48,21 +48,22 @@ export default function About() {
   return (
     <section
       id="About"
-      className="relative py-24 px-6 sm:px-12  from-black via-zinc-900 to-gray-800 text-white overflow-hidden"
+      className="relative py-24 px-6 sm:px-12 from-black via-zinc-900 to-gray-800 text-white overflow-hidden"
     >
       <video
         autoPlay
         loop
         muted
         playsInline
-        playbaackRate={0.1}
-        className="absolute top-0 left-0 w-full h-full object-cover z-[-1] opacity"
+        playbaackrate={0.1}
+        className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
       >
         <source
           src="https://res.cloudinary.com/dijtya7zg/video/upload/v1745955707/background2_knztsy.mp4"
           type="video/mp4"
         />
       </video>
+
       <motion.h1
         initial={{ opacity: 0, y: -40 }}
         animate={{ opacity: 1, y: 0 }}
@@ -71,31 +72,30 @@ export default function About() {
       >
         About Me
       </motion.h1>
-<div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-3xl shadow-lg p-10 flex flex-col-reverse md:flex-row mx-auto gap-20 max-w-7xl items-center transition-all duration-500">
 
+      <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-3xl shadow-lg p-10 flex flex-col-reverse md:flex-row gap-12 items-center w-full md:max-w-7xl mx-auto transition-all duration-500">
         <motion.div
-  initial={{ opacity: 0, x: -60 }}
-  animate={{ opacity: 1, x: 0 }}
-  transition={{ duration: 0.8 }}
-  className="flex-1 text-left text-lg leading-8 whitespace-pre-line text-white drop-shadow-md"
->
-  {aboutInfo}
-</motion.div>
-
+          initial={{ opacity: 0, x: -60 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="flex-1 text-left text-lg leading-8 whitespace-pre-line text-white drop-shadow-md"
+        >
+          {aboutInfo}
+        </motion.div>
 
         <motion.div
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ duration: 1, type: "spring", bounce: 0.4 }}
-          className="flex-1 relative"
+          className="flex-1 flex justify-center w-full"
         >
-          <div className="relative w-[400px] h-[400px] rounded-full overflow-hidden shadow-[0_0_60px_10px_rgba(255,255,255,0.15)] hover:scale-105 transition-all duration-700 border-4 border-white/20 backdrop-blur-md bg-white/5">
-
+          <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-[400px] md:h-[400px] rounded-full overflow-hidden shadow-[0_0_60px_10px_rgba(255,255,255,0.15)] hover:scale-105 transition-all duration-700 border-4 border-white/20 backdrop-blur-md bg-white/5">
             <Image
               src="/me.png"
               alt="Profile Picture"
-              fill
-              className="object-cover rounded-full animate-pulse"
+              width={400}
+              height={400}
+              className="object-cover w-full h-full rounded-full animate-pulse"
             />
             <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-purple-600/20 via-pink-500/20 to-amber-400/20 blur-3xl animate-spin-slow" />
           </div>
@@ -109,11 +109,11 @@ export default function About() {
         viewport={{ once: true }}
         className="text-4xl font-bold text-center mt-24 mb-12"
       >
-         My Skills
+        My Skills
       </motion.h2>
 
       <motion.div
-        className="max-w-6xl mx-auto grid grid-cols-4 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6"
+        className="max-w-6xl mx-auto grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-6 px-2"
         initial="hidden"
         whileInView="visible"
         variants={{
@@ -130,15 +130,15 @@ export default function About() {
           return (
             <motion.div
               key={index}
-              className="md:p-6 p-3 rounded-xl bg-gradient-to-tl from-amber-300 to-red-500 shadow-lg shadow-blue-500 md:shadow-amber-200/50 md:hover:bg-amber-500/80 text-white flex flex-col items-center justify-center transform hover:scale-110 transition-all duration-300 cursor-pointer group animate-bounce"
+              className="p-4 rounded-xl bg-gradient-to-tl from-amber-300 to-red-500 shadow-lg md:hover:bg-amber-500/80 text-white flex flex-col items-center justify-center transform hover:scale-110 transition-all duration-300 cursor-pointer group"
               whileHover={{ scale: 1.1 }}
               variants={{
                 hidden: { opacity: 0, scale: 0.8 },
                 visible: { opacity: 1, scale: 1 }
               }}
             >
-              <Icon className="text-5xl mb-2 group-hover:animate-bounce" />
-              <p className="text-sm font-bold">{skill.name}</p>
+              <Icon className="text-4xl mb-2 group-hover:animate-bounce" />
+              <p className="text-sm font-bold text-center">{skill.name}</p>
             </motion.div>
           );
         })}
