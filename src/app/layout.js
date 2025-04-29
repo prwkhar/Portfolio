@@ -18,6 +18,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} bg-background text-foreground min-h-screen flex flex-col overflow-x-hidden`}
       >
+        <Analytics/>
         <Navbar/>
         <div className="flex-grow min-h-[90%] bg-amber-300">{children}</div>
         <Footer />
