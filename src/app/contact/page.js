@@ -53,7 +53,7 @@ export default function Contact() {
   ];
 
   return (
-    <div className="relative py-24 px-6 min-h-screen bg-gradient-to-br from-[#0f2027] via-[#203a43] to-[#2c5364] text-white flex flex-col md:flex-row gap-5 items-center justify-center overflow-hidden">
+    <div className="relative py-24 px-6 min-h-screen bg-gradient-to-br from-[#0f2027] via-[#203a43] to-[#2c5364] text-white flex flex-col md:flex-row md:gap-5 items-center justify-center overflow-hidden">
 <div className="flex flex-col items-center justify-center w-full max-w-6xl mx-auto text-center pt-16 space-y-6 mb-3 overflow-visible z-10">
         <motion.h1
           initial={{ opacity: 0, y: -40 }}
