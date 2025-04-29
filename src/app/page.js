@@ -13,7 +13,7 @@ export default function Home() {
         className="w-full h-auto text-center pt-16 space-y-6 mb-3 overflow-visible"
       >
         <p className="text-5xl md:text-6xl pb-2 font-extrabold relative bg-clip-text text-transparent bg-gradient-to-br from-teal-400 to-blue-500">
-          Hey, I'm Prakhar Agarwal
+          {`Hey, I'm Prakhar Agarwal`}
         </p>
 
         <p className="text-lg md:text-xl text-gray-300">
