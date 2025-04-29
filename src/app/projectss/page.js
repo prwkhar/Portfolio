@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import { useState } from "react";
 
 const projects = [
   {
@@ -28,8 +29,10 @@ const projects = [
       "/auction.png",
       "/auction2.png",
     ],
+    video: "https://res.cloudinary.com/dijtya7zg/video/upload/v1745926622/auction_y6m3w6.mp4",
     liveLink: "https://auction-app-frontend-virid.vercel.app/",
     sourceCode: "https://github.com/prwkhar/auction-app-frontend",
+    livevideo: "https://www.youtube.com/watch?v=Zue1BFg-uDE",
   },
   {
     title: "Get Meet – Real time video calling website",
@@ -51,7 +54,7 @@ const projects = [
     sourceCode: "https://github.com/prwkhar/todo_frontend",
   },
   {
-    title: "GetMeChai – Creator Donation Platform",
+    title: "GetMeChai – Creator Donation Platform (On Going)",
     description:
       "Patreon-style MERN app with Razorpay integration. Donate to creators anonymously without login. Includes creator dashboards & donation logs.",
     images: [
@@ -59,67 +62,104 @@ const projects = [
     ],
     sourceCode: "https://github.com/prwkhar/buymechai",
   },
+  {
+    title: "Cursed Tomb - A 3D FPS Xperience",
+    description:
+      "A first-person shooter game developed using Unreal Engine and Blueprints. Players engage in time-based shooting challenges in a pre-designed 3D environment. Optimized for smooth gameplay, the game leverages Unreal Engine’s FPS mechanics to deliver an immersive experience.",
+    images: [
+      "/cursedtomb.png",
+      "/cursedtomb2.png",
+    ],
+    livevideo:"https://youtu.be/N7rKkm_kypA",
+  }
 ];
 
 export default function Project() {
+  const [hoveredVideoIndex, setHoveredVideoIndex] = useState(null);
   return (
-    <div className="flex flex-col items-center py-20 px-4">
-      <h1 className="text-5xl font-bold mb-8 text-center text-gray-800 dark:text-white">
-        Projects
+    <div className="flex flex-col items-center py-20 px-4 bg-gradient-to-b from-black via-gray-900 to-black min-h-screen">
+      <h1 className="text-6xl font-extrabold mb-10 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-500 mt-10 via-blue-50 to-purple-500 animate-pulse drop-shadow-lg">
+        PROJECTS
       </h1>
 
-      <div className="flex flex-wrap justify-center gap-8 w-full max-w-7xl">
+      <div className="flex flex-wrap justify-center gap-12 w-full">
         {projects.map((proj, idx) => (
           <div
             key={idx}
-            className="flex flex-col justify-between items-center text-center bg-green-800/30 rounded-2xl shadow-lg hover:shadow-2xl transition-all p-6 w-[620px] h-[530px] overflow-hidden"
+            className="group flex flex-col justify-between items-center text-center backdrop-blur-md bg-white/5 border-2 border-gray-700 dark:border-white/10 hover:border-cyan-400 rounded-3xl shadow-2xl hover:shadow-cyan-500/50 transition-all duration-500 p-6 w-[620px] h-[540px] overflow-hidden transform hover:scale-[1.03]"
           >
-            {/* Image Slider */}
-            <div className="w-full h-[70%] mb-4 p-1 rounded-2xl overflow-hidden flex items-center place-content-center justify-center">
-              <Swiper
-                spaceBetween={10}
-                slidesPerView={1}
-                navigation={true}
-                modules={[Navigation]}
-                className="w-full h-full"
-              >
-                {proj.images.map((img, imgIdx) => (
-                  <SwiperSlide key={imgIdx}>
-                    <img
-                      src={img}
-                      alt={`${proj.title} screenshot ${imgIdx + 1}`}
-                      className="max-h-[100%] pt-1 w-auto mx-auto object-contain rounded-2xl"
-                    />
-                  </SwiperSlide>
-                ))}
-              </Swiper>
+            {/* Image Slider / Video */}
+            <div className="w-full h-[70%] mb-6 p-1 rounded-2xl overflow-hidden flex items-center place-content-center justify-center border-2 border-white/20 shadow-inner shadow-cyan-700/30">
+              {proj.video ? (
+                <video
+                  src={proj.video}
+                  className="w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-all duration-300 ease-in-out"
+                  loop={false}
+                  playsInline
+                  controls={hoveredVideoIndex === idx}
+                  onMouseEnter={() => setHoveredVideoIndex(idx)}
+                  onMouseLeave={() => setHoveredVideoIndex(null)}
+                />
+              ) : (
+                <Swiper
+                  spaceBetween={10}
+                  slidesPerView={1}
+                  navigation={true}
+                  modules={[Navigation]}
+                  className="w-full h-full rounded-2xl justify-center items-center"
+                >
+                  {proj.images.map((img, imgIdx) => (
+                    <SwiperSlide key={imgIdx}>
+                      <img
+                        src={img}
+                        alt={`${proj.title} screenshot ${imgIdx + 1}`}
+                        className="max-h-full flex justify-center items-center object-contain rounded-2xl hover:scale-105 transition-transform duration-300"
+                      />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              )}
             </div>
 
-            <h2 className="text-lg font-semibold text-gray-800 dark:text-white mb-2">
+            {/* Title */}
+            <h2 className="text-xl font-bold text-white tracking-widest drop-shadow-md mb-2">
               {proj.title}
             </h2>
 
-            <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
+            {/* Description */}
+            <p className="text-sm text-gray-300 mb-4 px-2 italic line-clamp-3 group-hover:line-clamp-none transition-all duration-300 ease-in-out">
               {proj.description}
             </p>
 
-            <div className="flex gap-3">
+            {/* Buttons */}
+            <div className="flex gap-4 flex-wrap justify-center mt-2">
               {proj.liveLink && (
                 <a
                   href={proj.liveLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-3 py-1.5 rounded-xl transition text-sm"
+                  className="flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg hover:scale-110 transition-all duration-300"
                 >
                   <FaExternalLinkAlt />
                   Live
+                </a>
+              )}
+              {proj.livevideo && (
+                <a
+                  href={proj.livevideo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg hover:scale-110 transition-all duration-300"
+                >
+                  <FaExternalLinkAlt />
+                  Video
                 </a>
               )}
               <a
                 href={proj.sourceCode}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 bg-gray-700 hover:bg-gray-800 text-white px-3 py-1.5 rounded-xl transition text-sm"
+                className="flex items-center gap-2 bg-gradient-to-r from-gray-700 to-gray-900 hover:from-gray-800 hover:to-black text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg hover:scale-110 transition-all duration-300"
               >
                 <FaGithub />
                 Code
@@ -131,4 +171,3 @@ export default function Project() {
     </div>
   );
 }
-

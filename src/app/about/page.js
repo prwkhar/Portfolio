@@ -1,13 +1,20 @@
-"use client"
+"use client";
 import Image from "next/image";
-import { FaHtml5, FaCss3Alt, FaReact, FaNodeJs, FaPython, FaJava, FaGithub, FaGitAlt, FaLinux, FaAndroid } from "react-icons/fa";
-import { SiTailwindcss, SiNextdotjs, SiExpress, SiMongodb, SiFirebase,  SiC, SiCplusplus } from "react-icons/si";
+import { motion } from "framer-motion";
+import {
+  FaHtml5, FaCss3Alt, FaReact, FaNodeJs, FaPython, FaJava, FaGithub,
+  FaGitAlt, FaLinux, FaAndroid
+} from "react-icons/fa";
+import {
+  SiTailwindcss, SiNextdotjs, SiExpress, SiMongodb, SiFirebase,
+  SiC, SiCplusplus
+} from "react-icons/si";
 
 const skills = [
   { name: "HTML", icon: FaHtml5 },
   { name: "CSS", icon: FaCss3Alt },
   { name: "Tailwind CSS", icon: SiTailwindcss },
-  { name: "JavaScript", icon: FaReact }, // Ideally SiJavascript
+  { name: "JavaScript", icon: FaReact },
   { name: "React", icon: FaReact },
   { name: "Next.js", icon: SiNextdotjs },
   { name: "Node.js", icon: FaNodeJs },
@@ -41,48 +48,86 @@ export default function About() {
   return (
     <section
       id="About"
-      className="py-20 px-6 sm:px-12 bg-gray-50 dark:bg-black text-gray-800 dark:text-white"
+      className="relative py-24 px-6 sm:px-12 bg-gradient-to-tr from-black via-zinc-900 to-gray-800 text-white overflow-hidden"
     >
-      <h1 className="text-5xl font-bold text-center mb-16">About Me</h1>
+      <motion.h1
+        initial={{ opacity: 0, y: -40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        className="text-6xl font-extrabold text-center mb-20 bg-clip-text text-transparent bg-gradient-to-r from-amber-400 via-pink-500 to-purple-600"
+      >
+        About Me
+      </motion.h1>
 
-      <div className="flex flex-col-reverse md:flex-row mx-auto gap-16 max-w-6xl items-center">
-        <div className="flex-1 text-left">
-          <p className="text-lg leading-8 whitespace-pre-line text-gray-700 dark:text-gray-300">
-            {aboutInfo}
-          </p>
-        </div>
+      <div className="flex flex-col-reverse md:flex-row mx-auto gap-20 max-w-7xl items-center">
+        <motion.div
+          initial={{ opacity: 0, x: -60 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="flex-1 text-left text-lg leading-8 whitespace-pre-line text-gray-200"
+        >
+          {aboutInfo}
+        </motion.div>
 
-        <div className="flex-1 flex flex-col items-center">
-          <div className="w-fit h-fit hover:rotate-2 rounded-2xl overflow-hidden mb-8 border-4 border-gray-300 dark:border-gray-700 shadow-2xl hover:scale-110 transition-all duration-500 ease-in-out">
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1, type: "spring", bounce: 0.4 }}
+          className="flex-1 relative"
+        >
+          <div className="relative w-[400px] h-[400px] rounded-full overflow-hidden shadow-[0_0_60px_10px_rgba(255,255,255,0.1)] hover:scale-105 transition-all duration-700 border-4 border-white/20">
             <Image
               src="/me.png"
               alt="Profile Picture"
-              width={500}
-              height={500}
-              className="object-cover w-full h-full"
+              fill
+              className="object-cover rounded-full animate-pulse"
             />
+            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-purple-600/20 via-pink-500/20 to-amber-400/20 blur-3xl animate-spin-slow" />
           </div>
-        </div>
+        </motion.div>
       </div>
 
-      <h2 className="text-3xl font-semibold text-center mt-20 mb-8">My Skills</h2>
-      <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
+      <motion.h2
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2, duration: 0.6 }}
+        viewport={{ once: true }}
+        className="text-4xl font-bold text-center mt-24 mb-12"
+      >
+         My Skills
+      </motion.h2>
+
+      <motion.div
+        className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6"
+        initial="hidden"
+        whileInView="visible"
+        variants={{
+          visible: {
+            transition: {
+              staggerChildren: 0.1
+            }
+          }
+        }}
+        viewport={{ once: true }}
+      >
         {skills.map((skill, index) => {
-          const IconComponent = skill.icon;
+          const Icon = skill.icon;
           return (
-            <div
-              key={`skill-${index}`}
-              className="flex flex-col items-center justify-center p-5 bg-gray-100 dark:bg-gray-800 rounded-xl shadow-lg transform hover:scale-110 hover:rotate-2 hover:bg-amber-300 dark:hover:bg-amber-500 transition-all duration-300 cursor-pointer group"
+            <motion.div
+              key={index}
+              className="p-6 rounded-xl bg-zinc-800 hover:bg-amber-500/80 shadow-xl text-white flex flex-col items-center justify-center transform hover:scale-110 transition-all duration-300 cursor-pointer group"
+              whileHover={{ scale: 1.1 }}
+              variants={{
+                hidden: { opacity: 0, scale: 0.8 },
+                visible: { opacity: 1, scale: 1 }
+              }}
             >
-              <IconComponent className="text-4xl mb-1 group-hover:animate-bounce" />
-              <div className="text-sm font-bold text-gray-700 dark:text-white text-center">
-                {skill.name}
-              </div>
-            </div>
+              <Icon className="text-5xl mb-2 group-hover:animate-bounce" />
+              <p className="text-sm font-bold">{skill.name}</p>
+            </motion.div>
           );
         })}
-      </div>
+      </motion.div>
     </section>
   );
 }
-

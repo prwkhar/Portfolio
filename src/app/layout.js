@@ -1,6 +1,6 @@
 import "./globals.css";
 import { Geist, Geist_Mono } from "next/font/google";
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -15,10 +15,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} min-h-screen flex flex-col`}>
-        <Analytics/>
-        <Navbar />
-        <main className="flex-grow mt-20">{children}</main>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} bg-background text-foreground min-h-screen flex flex-col overflow-x-hidden`}
+      >
+        <Navbar/>
+        <div className="flex-grow min-h-[90%] bg-amber-300">{children}</div>
         <Footer />
       </body>
     </html>
