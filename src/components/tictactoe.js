@@ -90,9 +90,9 @@ export default function Tictactoe() {
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="flex flex-col items-center justify-center bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 w-full"
+      className="flex flex-col items-cente drop-shadow-2xl drop-shadow-amber-50 justify-center bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6"
     >
-      <h1 className="text-3xl font-bold text-white mb-1">🎮 TicTacToe Challenge</h1>
+      <p className="text-2xl font-bold text-white mb-1">🎮 TicTacToe Challenge</p>
       <p className="text-sm text-amber-300 mb-4">Beat the bot to download the CV</p>
 
       <div className="grid grid-cols-3 gap-4">

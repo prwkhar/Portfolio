@@ -25,7 +25,7 @@ export default function Home() {
 
       <motion.div
         transition={{ type: "spring", stiffness: 300 }}
-        className="bg-gray-900 p-6 mt-5 rounded-2xl shadow-lg shadow-teal-500/10 bg-gradient-to-b from-blue-300/50 to-purple-800/80  backdrop-blur-sm border border-gray-700/40 w-full max-w-2xl mx-auto mb-10"
+        className="bg-gray-900  mt-5 rounded-2xl shadow-lg shadow-teal-500/10 bg-gradient-to-b from-blue-300/50 to-purple-800/80  backdrop-blur-sm border border-gray-700/40 max-wd-[70%] md:max-w-2xl mx-auto mb-10"
       >
         <Tictactoe />
       </motion.div>

@@ -98,7 +98,7 @@ export default function About() {
       </motion.h2>
 
       <motion.div
-        className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6"
+        className="max-w-6xl mx-auto grid grid-cols-4 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6"
         initial="hidden"
         whileInView="visible"
         variants={{
@@ -115,7 +115,7 @@ export default function About() {
           return (
             <motion.div
               key={index}
-              className="p-6 rounded-xl bg-zinc-800 hover:bg-amber-500/80 shadow-xl text-white flex flex-col items-center justify-center transform hover:scale-110 transition-all duration-300 cursor-pointer group"
+              className="md:p-6 p-3 rounded-xl bg-gradient-to-tl from-amber-300 to-red-500 shadow-lg shadow-blue-500 md:shadow-amber-200/50 md:hover:bg-amber-500/80 text-white flex flex-col items-center justify-center transform hover:scale-110 transition-all duration-300 cursor-pointer group animate-bounce"
               whileHover={{ scale: 1.1 }}
               variants={{
                 hidden: { opacity: 0, scale: 0.8 },

@@ -18,7 +18,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-gray-950 text-white shadow-lg ">
+    <nav className="fixed top-0 w-full z-50 bg-gray-950 text-white shadow-lg shadow-amber-50/50">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         <Link
           href="/"
@@ -62,12 +62,13 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {menuOpen && (
+        <div className="fixed top-15 right-0 w-[50%] mr-3 ">
         <motion.div
-          initial={{ height: 0, opacity: 0 }}
-          animate={{ height: "auto", opacity: 1 }}
-          exit={{ height: 0, opacity: 0 }}
-          className="md:hidden flex flex-col items-center gap-4 py-4 bg-gray-950 text-white"
-        >
+          initial={{ height: "100%", opacity: 0.5 ,width: 0}}
+          animate={{ height: "100%", opacity: 1, width: "100%" }}
+          exit={{ height: 0, opacity: 0, width: 0}}
+          className="md:hidden flex flex-col rounded-2xl shadow-xl shadow-amber-400 border-2 border-purple-400/50 bg-gradient-to-bl from-blue-600 to-red-600 items-center w-full gap-4 py-4 text-white"
+        > 
           {navLinks.map((link) => (
             <Link
               key={link.name}
@@ -83,6 +84,7 @@ export default function Navbar() {
             </Link>
           ))}
         </motion.div>
+        </div>
       )}
     </nav>
   );
