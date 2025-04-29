@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
       >
         <Analytics/>
         <Navbar/>
-        <div className="flex-grow min-h-[90%] bg-amber-300">{children}</div>
+        <div className="flex-grow min-h-[90%] ">{children}</div>
         <Footer />
       </body>
     </html>

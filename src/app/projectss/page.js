@@ -77,7 +77,20 @@ const projects = [
 export default function Project() {
   const [hoveredVideoIndex, setHoveredVideoIndex] = useState(null);
   return (
-    <div className="flex flex-col items-center py-20 px-4 bg-gradient-to-b from-black via-gray-900 to-black min-h-screen">
+    <div className="relative flex flex-col items-center py-20 px-4  min-h-full">
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        playbaackrate={0.1}
+        className="absolute top-0 left-0 w-full h-full object-cover z-[-1] opacity"
+      >
+        <source
+          src="https://res.cloudinary.com/dijtya7zg/video/upload/v1745955707/background2_knztsy.mp4"
+          type="video/mp4"
+        />
+      </video>
       <h1 className="text-6xl font-extrabold mb-10 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-500 mt-10 via-blue-50 to-purple-500 animate-pulse drop-shadow-lg">
         PROJECTS
       </h1>

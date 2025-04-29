@@ -48,8 +48,21 @@ export default function About() {
   return (
     <section
       id="About"
-      className="relative py-24 px-6 sm:px-12 bg-gradient-to-tr from-black via-zinc-900 to-gray-800 text-white overflow-hidden"
+      className="relative py-24 px-6 sm:px-12  from-black via-zinc-900 to-gray-800 text-white overflow-hidden"
     >
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        playbaackRate={0.1}
+        className="absolute top-0 left-0 w-full h-full object-cover z-[-1] opacity"
+      >
+        <source
+          src="https://res.cloudinary.com/dijtya7zg/video/upload/v1745955707/background2_knztsy.mp4"
+          type="video/mp4"
+        />
+      </video>
       <motion.h1
         initial={{ opacity: 0, y: -40 }}
         animate={{ opacity: 1, y: 0 }}
@@ -58,16 +71,17 @@ export default function About() {
       >
         About Me
       </motion.h1>
+<div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-3xl shadow-lg p-10 flex flex-col-reverse md:flex-row mx-auto gap-20 max-w-7xl items-center transition-all duration-500">
 
-      <div className="flex flex-col-reverse md:flex-row mx-auto gap-20 max-w-7xl items-center">
         <motion.div
-          initial={{ opacity: 0, x: -60 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          className="flex-1 text-left text-lg leading-8 whitespace-pre-line text-gray-200"
-        >
-          {aboutInfo}
-        </motion.div>
+  initial={{ opacity: 0, x: -60 }}
+  animate={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.8 }}
+  className="flex-1 text-left text-lg leading-8 whitespace-pre-line text-white drop-shadow-md"
+>
+  {aboutInfo}
+</motion.div>
+
 
         <motion.div
           initial={{ scale: 0 }}
@@ -75,7 +89,8 @@ export default function About() {
           transition={{ duration: 1, type: "spring", bounce: 0.4 }}
           className="flex-1 relative"
         >
-          <div className="relative w-[400px] h-[400px] rounded-full overflow-hidden shadow-[0_0_60px_10px_rgba(255,255,255,0.1)] hover:scale-105 transition-all duration-700 border-4 border-white/20">
+          <div className="relative w-[400px] h-[400px] rounded-full overflow-hidden shadow-[0_0_60px_10px_rgba(255,255,255,0.15)] hover:scale-105 transition-all duration-700 border-4 border-white/20 backdrop-blur-md bg-white/5">
+
             <Image
               src="/me.png"
               alt="Profile Picture"
