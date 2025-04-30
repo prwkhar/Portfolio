@@ -18,7 +18,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-gray-950 text-white shadow-lg shadow-amber-50/50">
+    <nav className="fixed top-0 w-full z-50 bg-gray-950 text-white drop-shadow-2xl drop-shadow-amber-100 shadow-amber-50/50">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         <Link
           href="/"
@@ -67,7 +67,7 @@ export default function Navbar() {
           initial={{ height: "100%", opacity: 0.5 ,width: 0}}
           animate={{ height: "100%", opacity: 1, width: "100%" }}
           exit={{ height: 0, opacity: 0, width: 0}}
-          className="md:hidden flex flex-col rounded-2xl shadow-xl shadow-amber-400 border-2 border-purple-400/50 bg-gradient-to-bl from-blue-600 to-red-600 items-center w-full gap-4 py-4 text-white"
+          className="md:hidden flex font-bold flex-col rounded-2xl shadow-xl shadow-amber-400 border-2 border-purple-400/50 bg-gradient-to-bl from-blue-600/70 to-red-600/70 items-center w-full gap-4 py-4 text-white"
         > 
           {navLinks.map((link) => (
             <Link
@@ -76,7 +76,7 @@ export default function Navbar() {
               onClick={() => setMenuOpen(false)}
               className={`text-lg transition ${
                 pathname === link.href
-                  ? "text-teal-400"
+                  ? "text-amber-400"
                   : "hover:text-teal-400"
               }`}
             >

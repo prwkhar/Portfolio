@@ -2,6 +2,7 @@
 
 import Tictactoe from "@/components/tictactoe";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -38,6 +39,13 @@ export default function Home() {
           project.
         </p>
       </motion.div>
+      <div className="flex space-x-4 ">
+      <Link href="/about" className="w-[110px] text-center p-2 h-fit rounded-2xl bg-gradient-to-tr from-slate-600/50 via-blue-800/50 to-black/50 border-2 border-amber-50/50 shadow-2xl shadow-amber-100 animate-gradient-border hover:scale-105 transition-all duration-300">
+      {`About`} 
+      </Link>
+      <Link href="/contact" className="w-[110px] p-2 text-center h-fit rounded-2xl bg-gradient-to-tr from-slate-600/50 via-blue-800/50 to-black/50 border-2 border-amber-50/50 shadow-2xl shadow-amber-100 animate-gradient-border hover:scale-105 transition-all duration-300">
+      {`Contact`} 
+      </Link></div>
 
       {/* TicTacToe Section */}
       <motion.div

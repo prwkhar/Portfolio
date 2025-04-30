@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import {
   FaHtml5, FaCss3Alt, FaReact, FaNodeJs, FaPython, FaJava, FaGithub,
   FaGitAlt, FaLinux, FaAndroid
@@ -101,16 +102,21 @@ export default function About() {
           </div>
         </motion.div>
       </div>
-
-      <motion.h2
+      <div className="flex p-10 space-x-5 justify-center items-center">
+      <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.6 }}
         viewport={{ once: true }}
-        className="text-4xl font-bold text-center mt-24 mb-12"
+        className="text-4xl font-bold text-center"
       >
         My Skills
-      </motion.h2>
+      </motion.div>
+      <Link href="/projectss" className="w-[110px] text-center p-2 h-fit rounded-2xl bg-gradient-to-tr from-slate-600/50 via-blue-800/50 to-black/50 border-2 border-amber-50/50 shadow-2xl shadow-amber-100 animate-gradient-border hover:scale-105 transition-all duration-300">
+      {`Projects`} 
+      </Link>
+      </div>
+
 
       <motion.div
         className="max-w-6xl mx-auto grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-6 px-2"

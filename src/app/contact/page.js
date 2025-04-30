@@ -59,7 +59,7 @@ export default function Contact() {
         loop
         muted
         playsInline
-        playbaackRate={0.1}
+        playbaackrate={0.1}
         className="absolute top-0 left-0 w-full h-full object-cover z-[-1] opacity"
       >
         <source
