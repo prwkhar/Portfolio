@@ -57,7 +57,7 @@ export default function About() {
         muted
         playsInline
         playbaackrate={0.1}
-        className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
+        className="absolute top-0 left-0 w-full h-full lg:min-h-screen object-cover z-[-1]"
       >
         <source
           src="https://res.cloudinary.com/dijtya7zg/video/upload/v1745955707/background2_knztsy.mp4"
@@ -90,15 +90,14 @@ export default function About() {
           transition={{ duration: 1, type: "spring", bounce: 0.4 }}
           className="flex-1 flex justify-center w-full"
         >
-          <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-[400px] md:h-[400px] rounded-full overflow-hidden shadow-[0_0_60px_10px_rgba(255,255,255,0.15)] hover:scale-105 transition-all duration-700 border-4 border-white/20 backdrop-blur-md bg-white/5">
+          <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-[400px] md:h-[400px] rounded-2xl overflow-hidden shadow-2xl shadow-blue-600 hover:scale-105 transition-all duration-700 border-4 border-white/20 backdrop-blur-md bg-white/5">
             <Image
               src="/me.png"
               alt="Profile Picture"
               width={400}
               height={400}
-              className="object-cover w-full h-full rounded-full animate-pulse"
+              className=" w-full h-full shadow-black shadow-2xl"
             />
-            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-purple-600/20 via-pink-500/20 to-amber-400/20 blur-3xl animate-spin-slow" />
           </div>
         </motion.div>
       </div>
@@ -112,7 +111,7 @@ export default function About() {
       >
         My Skills
       </motion.div>
-      <Link href="/projectss" className="w-[110px] text-center p-2 h-fit rounded-2xl bg-gradient-to-tr from-slate-600/50 via-blue-800/50 to-black/50 border-2 border-amber-50/50 shadow-2xl shadow-amber-100 animate-gradient-border hover:scale-105 transition-all duration-300">
+      <Link href="/projectss" className="w-[110px] text-center p-2 h-fit rounded-full bg-gradient-to-tr from-slate-600/50 via-blue-800/50 to-black/50 border-2 border-amber-50/50 shadow-2xl shadow-amber-100 animate-gradient-border hover:scale-105 transition-all duration-300">
       {`Projects`} 
       </Link>
       </div>
