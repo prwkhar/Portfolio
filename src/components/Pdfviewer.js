@@ -2,7 +2,7 @@ import React from 'react'
 
 function Pdfviewer() {
   return (
-    <div className="flex flex-col items-center w-full m-4 justify-center h-[800px] bg-transparent text-white">
+    <div className="flex flex-col items-center w-full m-4 justify-center h-[80vh] bg-transparent text-white">
         <iframe
             src="/cv.pdf"
             width="60%"
