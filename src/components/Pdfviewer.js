@@ -4,7 +4,7 @@ function Pdfviewer() {
   return (
     <div className="flex flex-col items-center w-full m-4 justify-center h-[80vh] bg-transparent text-white">
         <iframe
-            src="/cv.pdf"
+            src="https://drive.google.com/file/d/1Y9p33COfFydZoj_0gAchvJNi-E4dX5oU/preview"
             width="60%"
             height="400%"
             className='rounded-2xl shadow-lg shadow-teal-500/10'
