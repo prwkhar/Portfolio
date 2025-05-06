@@ -1,13 +1,25 @@
 "use client";
-
 import Pdfviewer from "@/components/Pdfviewer";
 import Tictactoe from "@/components/tictactoe";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useState } from "react";
+import { use, useEffect, useState } from "react";
 
 export default function Home() {
   const [win,setwin] = useState(false);
+  useEffect(() => {
+    let theme = localStorage.getItem("theme");
+    if (theme === "true") {
+      setwin(true);
+    } else {
+      setwin(false);
+    }
+  }, [])
+  const updation = () => {
+    console.log("win");
+    setwin(true);
+    localStorage.setItem("theme", "true");
+  };
   return (
     <div className="relative flex flex-col min-h-screen items-center justify-center text-white overflow-hidden">
       {/* Video Background */}
@@ -60,7 +72,7 @@ export default function Home() {
         className="bg-gray-900 mt-5 rounded-2xl shadow-lg shadow-teal-500/10 bg-gradient-to-b from-blue-300/50 to-purple-800/80 backdrop-blur-sm border border-gray-700/40 max-w-[90%] md:max-w-2xl mx-auto mb-10"
       >
 
-        <Tictactoe onwin={()=>{setwin(true)}}/>
+        <Tictactoe onwin={updation}/>
       </motion.div>)}
     </div>
   );
