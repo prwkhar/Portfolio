@@ -108,10 +108,7 @@ export default function Tictactoe({onwin}) {
         className="flex flex-col text-center items-cente drop-shadow-2xl drop-shadow-amber-50 justify-center bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6"
       >
         <p className="text-2xl font-bold border-2 mb-1 text-transparent bg-clip-text bg-gradient-to-tr from-blue-800 to-red-800 drop-shadow-amber-50 drop-shadow">
-          Download CV
-        </p>
-        <p className="text-sm font-bold text-slate-600 drop-shadow-amber-50 drop-shadow mb-4">
-          Beat Tictactoe bot to download CV
+          Beat the Tictactoe Bot!!
         </p>
 
         <div className="grid grid-cols-3 gap-4">
