@@ -10,7 +10,7 @@ export default function Home() {
   useEffect(() => {
     let theme = localStorage.getItem("theme");
     if (theme === "true") {
-      setwin(true);
+      setwin(false);
     } else {
       setwin(false);
     }
@@ -67,7 +67,7 @@ export default function Home() {
 <div className="flex flex-wrap gap-4  justify-center items-center">
   {/* Download CV */}
   <a
-    href="/your-cv-file.pdf"
+    href="/cv.pdf"
     download
     className="w-[140px] p-3 text-center rounded-full bg-gradient-to-tr from-slate-600/50 via-blue-800/50 to-black/50 border-2 border-amber-50/50 shadow-2xl shadow-amber-100 animate-gradient-border hover:scale-105 transition-all duration-300"
   >
